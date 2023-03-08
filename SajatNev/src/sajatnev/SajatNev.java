@@ -14,7 +14,7 @@ public class SajatNev {
         
         //felhasznalas
         boolean van13 = vanBenne13(tomb);
-        System.out.println("van benne 13: " + (van13 ? "van": "ncs"));
+        System.out.println("van benne 13: " + (van13 ? "van": "nincs"));
         
         int i = bekeres(tomb);
         int szam = tomb[i];
@@ -63,7 +63,7 @@ public class SajatNev {
         int i = -1;
         boolean jo;
         do {
-            System.out.printf("melyik index (0-%d): ", h);
+            System.out.printf("melyik index (0-%d): ", h-1);
             i = sc.nextInt();
             jo = i >= 0 && i < h;
         } while (!jo);
@@ -75,10 +75,11 @@ public class SajatNev {
     private static void osztok(int szam)
     */
     private static void osztok(int[] tomb, int index){
-        int szam = tomb[index];
+        System.out.println("|szám| osztói: ");
+        int szam = Math.abs(tomb[index]);
         boolean oszto = false;
         //i az osztókat reprezentálja, 1 és a szam nincs benne
-        for (int i = 1; i < szam; i++) {
+        for (int i = 2; i < szam; i++) {
             if(szam % i == 0){
                 System.out.print(i + " ");
                 oszto = true;
@@ -86,6 +87,8 @@ public class SajatNev {
         }
         if(!oszto){
             System.out.println("prím szám");
+        }else{
+            System.out.println("");
         }
     }
 }
