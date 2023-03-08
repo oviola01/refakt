@@ -8,6 +8,7 @@ public class SajatNev {
     
     public static void main(String[] args) {
         int[] tomb = feltolt(5);
+        kiir(tomb);
     }
 
     private static int[] feltolt(int db) {
@@ -19,6 +20,12 @@ public class SajatNev {
         }
         
         return tomb;
+    }
+
+    private static void kiir(int[] tomb) {
+        for (int i = 0; i < tomb.length; i++) {
+            System.out.print(tomb[i] + " ");
+        }
     }
     
 }
