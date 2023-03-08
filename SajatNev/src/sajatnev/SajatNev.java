@@ -23,11 +23,15 @@ public class SajatNev {
     }
 
     private static void kiir(int[] tomb) {
-        System.out.print(tomb[0]);
-        for (int i = 1; i < tomb.length; i++) {
-            System.out.print(", " + tomb[i]);
+        if (tomb.length > 0) {
+            System.out.print(tomb[0]);
+            for (int i = 1; i < tomb.length; i++) {
+                System.out.print(", " + tomb[i]);
+            }
+            System.out.println("");            
+        } else {
+            System.out.println("üres a tömb!");
         }
-        System.out.println(""); 
     }
     
 }
