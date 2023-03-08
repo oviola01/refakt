@@ -35,7 +35,12 @@ public class SajatNev {
     }
     
     private static void vanBenne13(int[] tomb){
-        
+        //eldöntés tétele sablon:
+        int i = 0;
+        while(i < N && !T){
+            i++;
+        }
+        boolean van = i < N | i >= N;
     }
     
     private static void bekeres(int[] tomb){
