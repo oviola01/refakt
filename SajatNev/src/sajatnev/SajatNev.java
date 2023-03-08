@@ -50,8 +50,15 @@ public class SajatNev {
     
     private static int bekeres(int[] tomb){
         int h = tomb.length;
-        System.out.printf("melyik index (0-%d): ", h);
-        return sc.nextInt();
+        int i = -1;
+        boolean jo;
+        do {
+            System.out.printf("melyik index (0-%d): ", h);
+            i = sc.nextInt();
+            jo = i >= 0 && i < h;
+        } while (!jo);
+        
+        return i;
     }
     
     private static void osztok(int[] tomb){
