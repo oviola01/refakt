@@ -11,6 +11,16 @@ public class SajatNev {
     public static void main(String[] args) {
         int[] tomb = feltolt(5);
         kiir(tomb);
+        
+        //felhasznalas
+        boolean van13 = vanBenne13(tomb);
+        System.out.println("van benne 13: " + (van13 ? "van": "ncs"));
+        
+        int i = bekeres(tomb);
+        int szam = tomb[i];
+        System.out.println("vizsgált szám: " + tomb[i]);
+        
+        osztok(tomb, i);
     }
 
     private static int[] feltolt(int db) {
