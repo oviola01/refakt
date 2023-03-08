@@ -34,4 +34,15 @@ public class SajatNev {
         }
     }
     
+    private static void vanBenne13(int[] tomb){
+        
+    }
+    
+    private static void bekeres(int[] tomb){
+        
+    }
+    
+    private static void osztok(int[] tomb){
+        
+    }
 }
