@@ -61,7 +61,11 @@ public class SajatNev {
         return i;
     }
     
-    private static void osztok(int[] tomb){
-        
+    /* lehetne még:
+    private static void osztok(int szam)
+    */
+    private static void osztok(int[] tomb, int index){
+        int szam = tomb[index];
+        //szam osztóinak vizsgalata
     }
 }
