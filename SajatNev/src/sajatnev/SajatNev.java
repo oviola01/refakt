@@ -7,6 +7,10 @@ public class SajatNev {
     private static Random rnd = new Random();
     
     public static void main(String[] args) {
+        feltolt();
+    }
+
+    private static void feltolt() {
         int[] tomb = new int[5];
         for (int i = 0; i < 5; i++) {
             //tomb[i] = rnd.nextInt(-5, 16);
