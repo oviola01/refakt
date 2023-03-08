@@ -66,6 +66,11 @@ public class SajatNev {
     */
     private static void osztok(int[] tomb, int index){
         int szam = tomb[index];
-        //szam osztóinak vizsgalata
+        //i az osztókat reprezentálja, 1 és a szam nincs benne
+        for (int i = 1; i < szam; i++) {
+            if(szam % i == 0){
+                System.out.print(i + " ");
+            }
+        }
     }
 }
