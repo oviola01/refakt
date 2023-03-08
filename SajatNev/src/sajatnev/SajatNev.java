@@ -1,10 +1,12 @@
 package sajatnev;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class SajatNev {
 
     private static Random rnd = new Random();
+    private static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
         int[] tomb = feltolt(5);
@@ -46,8 +48,10 @@ public class SajatNev {
         return i < N;
     }
     
-    private static void bekeres(int[] tomb){
-        
+    private static int bekeres(int[] tomb){
+        int h = tomb.length;
+        System.out.printf("melyik index (0-%d): ", h);
+        return sc.nextInt();
     }
     
     private static void osztok(int[] tomb){
