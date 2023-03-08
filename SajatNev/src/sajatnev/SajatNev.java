@@ -34,13 +34,16 @@ public class SajatNev {
         }
     }
     
-    private static void vanBenne13(int[] tomb){
-        //eldöntés tétele sablon:
+    private static boolean vanBenne13(int[] tomb){
+        //eldöntés tétele sablon a többi kommentben
+        int N = tomb.length;
         int i = 0;
-        while(i < N && !T){
+        //while(i < N && !T){
+        while(i < N && !(tomb[i] == 13)){
             i++;
         }
-        boolean van = i < N | i >= N;
+        //boolean van = i < N | i >= N;
+        return i < N;
     }
     
     private static void bekeres(int[] tomb){
