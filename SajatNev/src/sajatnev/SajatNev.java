@@ -43,8 +43,13 @@ public class SajatNev {
         }
     }
     
+    private static void kiir(String str, boolean sortores) {
+        String s = sortores ? "\n" : "";
+        System.out.print(str + s);
+    }
+    
     private static void kiir(String str) {
-        System.out.println(str);
+        kiir(str, true);
     }
     
     private static boolean vanBenne13(int[] tomb){
@@ -62,7 +67,7 @@ public class SajatNev {
         boolean jo;
         do {
             String s = String.format("melyik index (0-%d): ", h-1);
-            kiir(s);
+            kiir(s, false);
             i = sc.nextInt();
             jo = i >= 0 && i < h;
         } while (!jo);
