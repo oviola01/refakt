@@ -73,19 +73,18 @@ public class SajatNev {
         if (tomb.length > 0) {
             String s = "|szám| osztói: ";
             int szam = Math.abs(tomb[index]);
-            boolean oszto = false;
-            //i az osztókat reprezentálja, 1 és a szam nincs benne
-            for (int i = 2; i < szam; i++) {
-                if (szam % i == 0) {
-                    if(!oszto){
-                        s += i;
+            boolean talaltOszto = false;
+            for (int oszto = 2; oszto < szam; oszto++) {
+                if (szam % oszto == 0) {
+                    if(!talaltOszto){
+                        s += oszto;
                     }else{
-                        s += ", " + i;
+                        s += ", " + oszto;
                     }
-                    oszto = true;
+                    talaltOszto = true;
                 }
             }
-            if (!oszto) {
+            if (!talaltOszto) {
                 System.out.println("prím szám");
             } else {
                 kiir(s);
