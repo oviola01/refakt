@@ -13,11 +13,11 @@ public class SajatNev {
         kiir(tomb);
         
         boolean van13 = vanBenne13(tomb);
-        System.out.println("van benne 13: " + (van13 ? "van": "nincs"));
+        kiir("van benne 13: " + (van13 ? "van": "nincs"));
         
         int i = bekeres(tomb);
         int szam = tomb[i];
-        System.out.println("vizsgált szám: " + tomb[i]);
+        kiir("vizsgált szám: " + tomb[i]);
         
         osztok(tomb, i);
     }
@@ -39,7 +39,7 @@ public class SajatNev {
             }
             kiir(s);
         } else {
-            System.out.println("üres a tömb!");
+            kiir("üres a tömb!");
         }
     }
     
@@ -61,7 +61,8 @@ public class SajatNev {
         int i = -1;
         boolean jo;
         do {
-            System.out.printf("melyik index (0-%d): ", h-1);
+            String s = String.format("melyik index (0-%d): ", h-1);
+            kiir(s);
             i = sc.nextInt();
             jo = i >= 0 && i < h;
         } while (!jo);
@@ -85,12 +86,12 @@ public class SajatNev {
                 }
             }
             if (!talaltOszto) {
-                System.out.println("prím szám");
+                kiir("prím szám");
             } else {
                 kiir(s);
             }
         } else {
-            System.out.println("üres a tömb!");
+            kiir("üres a tömb!");
         }
     }
 }
