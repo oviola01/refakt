@@ -83,16 +83,19 @@ public class SajatNev {
     */
     private static void osztok(int[] tomb, int index){
         if (tomb.length > 0) {
-            System.out.println("|szám| osztói: ");
+            //System.out.println("|szám| osztói: ");
+            String s = "|szám| osztói: ";
             int szam = Math.abs(tomb[index]);
             boolean oszto = false;
             //i az osztókat reprezentálja, 1 és a szam nincs benne
             for (int i = 2; i < szam; i++) {
                 if (szam % i == 0) {
                     if(!oszto){
-                        System.out.print(i);
+                        //System.out.print(i);
+                        s += i;
                     }else{
-                        System.out.print(", " + i);
+                        //System.out.print(", " + i);
+                        s += ", " + i;
                     }
                     oszto = true;
                 }
@@ -100,7 +103,8 @@ public class SajatNev {
             if (!oszto) {
                 System.out.println("prím szám");
             } else {
-                System.out.println("");
+                //System.out.println("");
+                kiir(s);
             }
         } else {
             System.out.println("üres a tömb!");
