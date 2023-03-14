@@ -36,11 +36,14 @@ public class SajatNev {
 
     private static void kiir(int[] tomb) {
         if (tomb.length > 0) {
-            System.out.print(tomb[0]);
+            //System.out.print(tomb[0]);
+            String s = tomb[0]+"";
             for (int i = 1; i < tomb.length; i++) {
-                System.out.print(", " + tomb[i]);
+                //System.out.print(", " + tomb[i]);
+                s += ", " + tomb[i];
             }
-            System.out.println("");            
+            //System.out.println("");
+            kiir(s);
         } else {
             System.out.println("üres a tömb!");
         }
