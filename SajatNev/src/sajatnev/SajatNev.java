@@ -10,7 +10,7 @@ public class SajatNev {
     
     public static void main(String[] args) {
         int[] tomb = feltolt(5);
-        kiir(tomb);
+        stringbeVesszovel(tomb);
         
         boolean van13 = vanBenne13(tomb);
         kiir("van benne 13: " + (van13 ? "van": "nincs"));
@@ -31,7 +31,7 @@ public class SajatNev {
         return tomb;
     }
 
-    private static void kiir(int[] tomb) {
+    private static void stringbeVesszovel(int[] tomb) {
         if (tomb.length > 0) {
             String s = tomb[0]+"";
             for (int i = 1; i < tomb.length; i++) {
