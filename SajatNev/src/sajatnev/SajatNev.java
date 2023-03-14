@@ -46,6 +46,10 @@ public class SajatNev {
         }
     }
     
+    private static void kiir(String str) {
+        System.out.println(str);
+    }
+    
     private static boolean vanBenne13(int[] tomb){
         //eldöntés tétele sablon a többi kommentben
         int N = tomb.length;
