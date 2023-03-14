@@ -75,20 +75,28 @@ public class SajatNev {
     private static void osztok(int szam)
     */
     private static void osztok(int[] tomb, int index){
-        System.out.println("|szám| osztói: ");
-        int szam = Math.abs(tomb[index]);
-        boolean oszto = false;
-        //i az osztókat reprezentálja, 1 és a szam nincs benne
-        for (int i = 2; i < szam; i++) {
-            if(szam % i == 0){
-                System.out.print(i + " ");
-                oszto = true;
+        if (tomb.length > 0) {
+            System.out.println("|szám| osztói: ");
+            int szam = Math.abs(tomb[index]);
+            boolean oszto = false;
+            //i az osztókat reprezentálja, 1 és a szam nincs benne
+            for (int i = 2; i < szam; i++) {
+                if (szam % i == 0) {
+                    if(!oszto){
+                        System.out.print(i);
+                    }else{
+                        System.out.print(", " + i);
+                    }
+                    oszto = true;
+                }
             }
-        }
-        if(!oszto){
-            System.out.println("prím szám");
-        }else{
-            System.out.println("");
+            if (!oszto) {
+                System.out.println("prím szám");
+            } else {
+                System.out.println("");
+            }
+        } else {
+            System.out.println("üres a tömb!");
         }
     }
 }
