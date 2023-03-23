@@ -30,6 +30,11 @@ public class SajatNev {
         kiirKonzolra(osztok(tomb, i));
     }
     
+    private static void kiirFajlba(String tartalom) throws IOException {
+        byte[] bytes = tartalom.getBytes();
+        Path path = Paths.get("kimenet.txt");
+        Files.write(path, bytes);
+    }
 
     
     private static int[] feltolt(int db) {
@@ -54,8 +59,30 @@ public class SajatNev {
     }
     
         private static void feladatokFajlba() throws IOException {
-        int[] tomb = feltolt(5);
-        kiirFajlba(stringbeVesszovel(tomb));
+            int[] tomb = feltolt(5);
+            String kimenet = (stringbeVesszovel(tomb));
+            kimenet += "\n";
+
+            boolean van13 = vanBenne13(tomb);
+            kimenet += "van benne 13: " + (van13 ? "van": "nincs");
+            kimenet += "\n";
+            
+            int i = bekeres(tomb);
+            kimenet += "vizsgált szám: " + tomb[i];
+            kimenet += "\n";
+
+            kimenet += osztok(tomb, i);
+            kimenet += "\n";
+            
+            /*csak a fájlba: 12345689 osztói:*/
+            int[] t = {12345689};
+            kimenet += "12345689 osztói: ";
+            kimenet += "\n";
+
+            kimenet += osztok(t, 0);
+            kimenet += "\n";
+            
+            kiirFajlba(kimenet);
      }
     
     private static void kiir(String str, boolean sortores) {
@@ -65,13 +92,6 @@ public class SajatNev {
     
     private static void kiirKonzolra(String str) {
         kiir(str, true);
-    }
-    
-    
-    private static void kiirFajlba(String tartalom) throws IOException {
-        byte[] bytes = tartalom.getBytes();
-        Path path = Paths.get("kimenet.txt");
-        Files.write(path, bytes);
     }
 
 
