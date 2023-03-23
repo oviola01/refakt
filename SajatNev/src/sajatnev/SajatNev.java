@@ -113,7 +113,7 @@ public class SajatNev {
         boolean jo;
         do {
             String s = String.format("melyik index (0-%d): ", h-1);
-            kiir(s, false);
+            kiir(s, false); //ezzel majd kezdeni kell valamit
             i = sc.nextInt();
             jo = i >= 0 && i < h;
         } while (!jo);
