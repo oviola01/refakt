@@ -13,11 +13,11 @@ public class SajatNev {
         stringbeVesszovel(tomb);
         
         boolean van13 = vanBenne13(tomb);
-        kiir("van benne 13: " + (van13 ? "van": "nincs"));
+        kiirKonzolra("van benne 13: " + (van13 ? "van": "nincs"));
         
         int i = bekeres(tomb);
         int szam = tomb[i];
-        kiir("vizsgált szám: " + tomb[i]);
+        kiirKonzolra("vizsgált szám: " + tomb[i]);
         
         osztok(tomb, i);
     }
@@ -31,16 +31,16 @@ public class SajatNev {
         return tomb;
     }
 
-    private static void stringbeVesszovel(int[] tomb) {
+    private static String stringbeVesszovel(int[] tomb) {
+        String s = "üres a tömb!";
         if (tomb.length > 0) {
-            String s = tomb[0]+"";
+            s = tomb[0]+"";
             for (int i = 1; i < tomb.length; i++) {
                 s += ", " + tomb[i];
             }
-            kiir(s);
-        } else {
-            kiir("üres a tömb!");
-        }
+            
+        } 
+        return s;
     }
     
     private static void kiir(String str, boolean sortores) {
@@ -48,7 +48,7 @@ public class SajatNev {
         System.out.print(str + s);
     }
     
-    private static void kiir(String str) {
+    private static void kiirKonzolra(String str) {
         kiir(str, true);
     }
     
@@ -91,12 +91,12 @@ public class SajatNev {
                 }
             }
             if (!talaltOszto) {
-                kiir("prím szám");
+                kiirKonzolra("prím szám");
             } else {
-                kiir(s);
+                kiirKonzolra(s);
             }
         } else {
-            kiir("üres a tömb!");
+            kiirKonzolra("üres a tömb!");
         }
     }
 }
