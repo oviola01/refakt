@@ -1,0 +1,6 @@
+8, 0, 15, 13, 4
+van benne 13: van
+vizsgált szám: 4
+|szám| osztói: 2
+12345689 osztói: 
+|szám| osztói: 17, 751, 967, 12767, 16439, 726217
