@@ -20,19 +20,27 @@ public class SajatNev {
     public static void feladatokKonzolra() {
         int[] tomb = feltolt(5);
         kiirKonzolra(stringbeVesszovel(tomb));
+        kiirKonzolra("\n");
         
         boolean van13 = vanBenne13(tomb);
         kiirKonzolra("van benne 13: " + (van13 ? "van": "nincs"));
+        kiirKonzolra("\n");
         
         int i = bekeres(tomb);
         kiirKonzolra("vizsgált szám: " + tomb[i]);
+        kiirKonzolra("\n");
         
         kiirKonzolra(osztok(tomb, i));
+        kiirKonzolra("\n");
     }
     
     private static void kiirFajlba(String tartalom) throws IOException {
+        kiirFajlba("kimenet.txt", tartalom);
+    }
+    
+     private static void kiirFajlba(String fajlNev, String tartalom) throws IOException {
         byte[] bytes = tartalom.getBytes();
-        Path path = Paths.get("kimenet.txt");
+        Path path = Paths.get(fajlNev);
         Files.write(path, bytes);
     }
 
@@ -84,13 +92,9 @@ public class SajatNev {
             kiirFajlba(kimenet);
      }
     
-    private static void kiir(String str, boolean sortores) {
-        String s = sortores ? "\n" : "";
-        System.out.print(str + s);
-    }
-    
     private static void kiirKonzolra(String str) {
-        kiir(str, true);
+        System.out.print(str);
+
     }
 
 
