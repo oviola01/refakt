@@ -92,9 +92,7 @@ public class SajatNev {
             }
             if (!talaltOszto) {
                 s = "prím szám";
-            } else {
-                kiirKonzolra(s);
-            }
+            } 
         } else {
             s = "üres a tömb!";
         }
