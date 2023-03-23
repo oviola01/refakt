@@ -75,11 +75,10 @@ public class SajatNev {
             kimenet += "\n";
             
             /*csak a fájlba: 12345689 osztói:*/
-            int[] t = {12345689};
-            kimenet += "12345689 osztói: ";
+            int szam = 12_345_689;
+            kimenet += szam + "osztói: ";
             kimenet += "\n";
-
-            kimenet += osztok(t, 0);
+            kimenet += osztok(szam);
             kimenet += "\n";
             
             kiirFajlba(kimenet);
@@ -117,12 +116,11 @@ public class SajatNev {
         
         return i;
     }
-
-    private static String osztok(int[] tomb, int index){
-        String s = "|szám| osztói: ";
-        if (tomb.length > 0) {
-            int szam = Math.abs(tomb[index]);
-            boolean talaltOszto = false;
+    
+    private static String osztok(int szam){
+        szam = Math.abs(szam);
+        String s = "";
+        boolean talaltOszto = false;
             for (int oszto = 2; oszto < szam; oszto++) {
                 if (szam % oszto == 0) {
                     if(!talaltOszto){
@@ -135,10 +133,17 @@ public class SajatNev {
             }
             if (!talaltOszto) {
                 s = "prím szám";
-            } 
+            }
+        return s;
+    }
+
+    private static String osztok(int[] tomb, int index){
+        String s = "|szám| osztói: ";
+        int szam = tomb[index];
+        if (tomb.length > 0) {
+            s += osztok(szam); //ezt még meg kell nézni mi baja!
         } else {
-            s = "üres a tömb!";
-        }
+            s = "üres a tömb!"; //ezt is!
         return s;
     }
 }
