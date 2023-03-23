@@ -75,9 +75,9 @@ public class SajatNev {
         return i;
     }
 
-    private static void osztok(int[] tomb, int index){
+    private static String osztok(int[] tomb, int index){
+        String s = "|szám| osztói: ";
         if (tomb.length > 0) {
-            String s = "|szám| osztói: ";
             int szam = Math.abs(tomb[index]);
             boolean talaltOszto = false;
             for (int oszto = 2; oszto < szam; oszto++) {
@@ -91,12 +91,14 @@ public class SajatNev {
                 }
             }
             if (!talaltOszto) {
-                kiirKonzolra("prím szám");
+                s = "prím szám";
             } else {
                 kiirKonzolra(s);
             }
         } else {
-            kiirKonzolra("üres a tömb!");
+            s = "üres a tömb!";
         }
+        return s;
     }
+    
 }
