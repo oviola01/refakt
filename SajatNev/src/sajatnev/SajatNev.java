@@ -9,8 +9,12 @@ public class SajatNev {
     private static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
+        feladatokKonzolra();
+    }
+
+    public static void feladatokKonzolra() {
         int[] tomb = feltolt(5);
-        stringbeVesszovel(tomb);
+        kiirKonzolra(stringbeVesszovel(tomb));
         
         boolean van13 = vanBenne13(tomb);
         kiirKonzolra("van benne 13: " + (van13 ? "van": "nincs"));
@@ -19,9 +23,9 @@ public class SajatNev {
         int szam = tomb[i];
         kiirKonzolra("vizsgált szám: " + tomb[i]);
         
-        osztok(tomb, i);
+        kiirKonzolra(osztok(tomb, i));
     }
-
+    
     private static int[] feltolt(int db) {
         int[] tomb = new int[db];
         for (int i = 0; i < db; i++) {
