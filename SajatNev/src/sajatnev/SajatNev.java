@@ -1,15 +1,20 @@
 package sajatnev;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
 public class SajatNev {
 
-    private static Random rnd = new Random();
-    private static Scanner sc = new Scanner(System.in);
+    private static final Random rnd = new Random();
+    private static final Scanner sc = new Scanner(System.in);
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         feladatokKonzolra();
+        feladatokFajlba();
     }
 
     public static void feladatokKonzolra() {
@@ -20,11 +25,12 @@ public class SajatNev {
         kiirKonzolra("van benne 13: " + (van13 ? "van": "nincs"));
         
         int i = bekeres(tomb);
-        int szam = tomb[i];
         kiirKonzolra("vizsgált szám: " + tomb[i]);
         
         kiirKonzolra(osztok(tomb, i));
     }
+    
+
     
     private static int[] feltolt(int db) {
         int[] tomb = new int[db];
@@ -47,6 +53,11 @@ public class SajatNev {
         return s;
     }
     
+        private static void feladatokFajlba() throws IOException {
+        int[] tomb = feltolt(5);
+        kiirFajlba(stringbeVesszovel(tomb));
+     }
+    
     private static void kiir(String str, boolean sortores) {
         String s = sortores ? "\n" : "";
         System.out.print(str + s);
@@ -56,6 +67,14 @@ public class SajatNev {
         kiir(str, true);
     }
     
+    
+    private static void kiirFajlba(String tartalom) throws IOException {
+        byte[] bytes = tartalom.getBytes();
+        Path path = Paths.get("kimenet.txt");
+        Files.write(path, bytes);
+    }
+
+
     private static boolean vanBenne13(int[] tomb){
         int N = tomb.length;
         int i = 0;
@@ -102,5 +121,4 @@ public class SajatNev {
         }
         return s;
     }
-    
 }
